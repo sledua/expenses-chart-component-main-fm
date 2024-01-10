@@ -1,0 +1,73 @@
+:root {
+    --primary-color-red: hsl(10, 79%, 65%);
+    --primary-color-cyan: hsl(186, 34%, 60%);
+    --neutral-color-darck-brown: hsl(25, 47%, 15%);
+    --neutral-color-medium-brown: hsl(28, 10%, 53%);
+    --neutral-color-cream: hsl(27, 66%, 92%);
+    --neutral-color-orange: hsl(33, 100%, 98%);
+    --breakpoint-sm: 375px;
+    --breakpoint-xl: 1440px;
+    --font-family: 'DM Sans', sans-serif;
+    --font-size-base: 18px;
+    --font-weight-400: 400;
+    --font-weight-700: 700;
+}
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: var(--font-family);
+    background-color: var(--neutral-color-cream);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-400);
+}
+main {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0 auto;
+    
+}
+.vidget {
+    width: var(--breakpoint-sm);
+    padding: 0 1.5rem;
+}
+.vidget-heder {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1.3rem;
+    border-radius: 0.8rem;
+    background-color: var(--primary-color-red);
+    color: var(--neutral-color-orange);
+}
+.vidget-title .h2{
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-400);
+    line-height: 1.8;
+}
+.vidget-title span {
+    font-size: 1.7rem;
+    font-weight: var(--font-weight-700);
+}
+.vidget-icon {
+    display: inherit;
+    align-items: center;
+}
+.vidget-body {
+    padding: 1.5rem 1.3rem;
+    border-radius: 0.8rem;
+    margin-top: 1rem;
+    background-color: #fff;
+}
+.vidget-body__title {
+    font-size: calc(var(--font-size-base) - 0.4rem);
+    font-weight: var(--font-weight-700);
+    line-height: 1.5;
+    color: var(--neutral-color-darck-brown);
+}
