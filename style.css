@@ -12,7 +12,6 @@
     --font-weight-400: 400;
     --font-weight-700: 700;
 }
-/* CSS Reset */
 * {
     margin: 0;
     padding: 0;
@@ -69,5 +68,92 @@ main {
     font-size: calc(var(--font-size-base) - 0.4rem);
     font-weight: var(--font-weight-700);
     line-height: 1.5;
+    color: var(--neutral-color-darck-brown);
+}
+.vidget-body__chart {
+    min-height: 15rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    border-bottom: 1px solid var(--neutral-color-cream);
+    padding: 0.3rem 0;
+}
+.vidget-body__chart-item {
+    width: 1.81rem;
+}
+.vidget-body__chart-item p {
+    font-size: 0.7rem;
+    text-align: center;
+    color: var(--neutral-color-medium-brown);
+    padding: 0.7rem 0;
+}
+.item-diagramma {
+    position: relative;
+    height: 30px;
+    background-color: var(--primary-color-red);
+    border-radius: 0.2rem;
+}
+.item-diagramma:hover {
+    cursor: pointer;
+}
+.item-diagramma:hover::before {
+    content: attr(data-value);
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    top: -2rem;
+    left: -0.55rem;
+    font-size: 0.7rem;
+    width: 1.81rem;
+    background-color: var(--neutral-color-darck-brown);
+    color: white;
+    font-weight: var(--font-weight-400);
+    padding: 0.4rem 0.6rem 0.4rem 0.4rem;
+    border-radius: 0.2rem;
+}
+.vidget-body__total {
+    display: flex;
+    justify-content: space-between;
+}
+.total-last {
+    text-align: right;
+}
+.vidget-body__total {
+    padding: 1.5rem 0 0;
+}
+.total-current {
+    display: flex;
+    flex-direction: column;
+}
+.current-title {
+    font-size: 0.95rem;
+    font-weight: var(--font-weight-400);
+    line-height: 1.5;
+    color: var(--neutral-color-medium-brown);
+    padding: 0 0 0.7rem;
+}
+.current-sum {
+    font-size: 2.2rem;
+    font-weight: var(--font-weight-700);
+    line-height: 1;
+    color: var(--neutral-color-darck-brown);
+}
+.total-last {
+    display: flex;
+    align-items: end;
+    flex-direction: column-reverse;
+}
+.last-title {
+    display: block;
+    font-size: 0.98rem;
+    font-weight: var(--font-weight-400);
+    line-height: 1.5;
+    color: var(--neutral-color-medium-brown);
+}
+.last-sum {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-700);
+    line-height: 1;
     color: var(--neutral-color-darck-brown);
 }

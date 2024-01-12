@@ -1,16 +1,26 @@
-// Get all the p tags inside the vidget-body__chart-item block
-const chartItems = document.querySelectorAll('.vidget-body__chart-item p');
+fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        const chartItems = document.querySelectorAll('.vidget-body__chart-item p');
+        const textArray = [];
+        chartItems.forEach((pTag) => {
+            textArray.push(pTag.textContent);
+        });
+        const itemDiagrammaBlocks = document.querySelectorAll('.item-diagramma');
+        itemDiagrammaBlocks.forEach((block, index) => {
+            block.id = textArray[index];
+            const height = data[index].amount;
+            block.style.height = `${height * 3}px `;
+            block.setAttribute('data-value', `$${height}`);
+            console.log(block.id);
+            if (block.id == 'wed') {
+                block.style.backgroundColor = '#76b5bc';
+            }
+            
+        });
 
-// Create an array to store the collected text
-const textArray = [];
-
-// Loop through each p tag and collect the text
-chartItems.forEach((pTag) => {
-    textArray.push(pTag.textContent);
-});
-
-// Add an id with the values collected in the array to each item-diagramma block
-const itemDiagrammaBlocks = document.querySelectorAll('.item-diagramma');
-itemDiagrammaBlocks.forEach((block, index) => {
-    block.id = textArray[index];
-});
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
